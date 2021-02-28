@@ -252,12 +252,16 @@ class HomeBlocBuilder{
 
           if(state is HomeLoading){
 
-            return Container(
-              width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.height,
-              child: Center(
-                  child: CircularProgressIndicator(),
-              ),
+            return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(top: 100),
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                ),
+              ],
             );
 
           }
@@ -265,6 +269,7 @@ class HomeBlocBuilder{
           if(state is HomeError){
 
             return Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
                   margin: EdgeInsets.only(top: 100),
